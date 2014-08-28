@@ -1,0 +1,30 @@
+.table {
+  clear: both;
+  width: 100%;
+}
+.table caption {
+  font-weight: bold;
+  padding: 0.35714em 0;
+  margin-top: 0.14286em;
+  background: #99D6FF;
+}
+.table tr th {
+  font-weight: normal;
+}
+.table tr th,
+.table tr td {
+  height: 3.92857em;
+  vertical-align: middle;
+  width: 6%;
+}
+.table tr td {
+  background: #f8f8f8;
+  border: 2px solid white;
+  text-align: center;
+}
+.table tr td: empty {
+  background: #ccc;
+}
+.table tr td.emptyCells {
+  background: #ccc;
+}
