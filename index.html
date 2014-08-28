@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link href="style.css" rel="stylesheet" />
+  <script data-semver="1.2.22" src="https://code.angularjs.org/1.2.22/angular.js" data-require="angular.js@1.2.x"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="plunker">
+  <div ng-controller="MainCtrl">
+
+    <table class="table">
+      <caption>
+        Without empty cells service
+      </caption>
+      <tbody>
+        <tr>
+          <th>Credits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            ${{ credit.Credit }}
+          </td>
+        </tr>
+        <tr>
+          <th>Debits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Debit }}
+          </td>
+        </tr>
+        <tr>
+          <th>Balance</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Balance }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <table class="table">
+      <caption>
+        With empty cells service
+      </caption>
+      <tbody>
+        <tr>
+          <th>Credits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            ${{ credit.Credit }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+        <tr>
+          <th>Debits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Debit }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+        <tr>
+          <th>Balance</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Balance }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <table class="table">
+      <caption>
+        With empty cells service and dates
+      </caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th ng-repeat="months in getLast12Months track by $index">{{ months }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Credits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            ${{ credit.Credit }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+        <tr>
+          <th>Debits</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Debit }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+        <tr>
+          <th>Balance</th>
+          <td ng-repeat="credit in Accounts.slice(0, 12)">
+            {{ credit.Balance }}
+          </td>
+          <td ng-repeat="emptyCell in getEmptyCells(Accounts.slice(0, 12).length)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
